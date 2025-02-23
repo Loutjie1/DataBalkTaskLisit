@@ -1,0 +1,6 @@
+@DataBalkTaskLisit_HostAddress = http://localhost:5197
+
+GET {{DataBalkTaskLisit_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
