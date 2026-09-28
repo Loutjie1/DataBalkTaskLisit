@@ -22,4 +22,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="7.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="DataBalkUnitTest\**\*.cs" />
+    <EmbeddedResource Remove="DataBalkUnitTest\**\*" />
+    <None Remove="DataBalkUnitTest\**\*" />
+  </ItemGroup>
+
 </Project>

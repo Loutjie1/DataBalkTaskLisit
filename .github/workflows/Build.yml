@@ -1,0 +1,33 @@
+name: Build Data Balk
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 9
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Restore
+        run: dotnet restore DataBalkUnitTest/DataBalkUnitTest.csproj
+
+      - name: Build
+        run: dotnet build DataBalkTaskLisitAPI.csproj --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test DataBalkUnitTest/DataBalkUnitTest.csproj --configuration Release
