@@ -26,8 +26,10 @@ jobs:
       - name: Restore
         run: dotnet restore DataBalkUnitTest/DataBalkUnitTest.csproj
 
-      - name: Build
+      - name: Build Debug
+        run: dotnet build DataBalkTaskLisitAPI.csproj --configuration Debug --no-restore
+      - name: Build Release
         run: dotnet build DataBalkTaskLisitAPI.csproj --configuration Release --no-restore
 
-      # - name: Test
-      #   run: dotnet test DataBalkUnitTest/DataBalkUnitTest.csproj --configuration Release
+
+

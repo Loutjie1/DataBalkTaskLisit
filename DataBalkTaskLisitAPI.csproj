@@ -4,6 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <DefaultItemExcludes>$(DefaultItemExcludes);DataBalkUnitTest\**\*</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,6 +25,7 @@
 
   <ItemGroup>
     <Compile Remove="DataBalkUnitTest\**\*.cs" />
+    <Content Remove="DataBalkUnitTest\**\*" />
     <EmbeddedResource Remove="DataBalkUnitTest\**\*" />
     <None Remove="DataBalkUnitTest\**\*" />
   </ItemGroup>
